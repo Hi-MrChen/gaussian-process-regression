@@ -1,14 +1,3 @@
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-        inlineMath: [['$','$']]
-      }
-    });
-</script>
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-
-
 ![封面](img/prior_vs_posterior.png)
 
 # 高斯过程回归
@@ -69,13 +58,13 @@ $$
 ***1.2 二元高斯分布***
 
 $$
-f(x,y) = A \exp (-(\frac{x - x_0)^2}{2\sigma_x^2} + \frac{(y - y_0)^2}{2\sigma_y^2}))
+f(x,y) = A \exp (-\frac{(x - x_0)^2}{2\sigma_x^2} - \frac{(y - y_0)^2}{2\sigma_y^2})
 $$
 
 ***1.3 多元高斯分布***
 
 $$
-p(x) = \frac{1}{(2\pi)^{n/2} |\Sigma|^{1/2}} \ \exp(-\frac{1}{2} (x - \mu)^T \Sigma^{-1} (x - \mu))
+p(x) = \frac{1}{(2\pi)^{n/2} |\Sigma|^{1/2}} \ \exp({ -\frac{1}{2} (x - \mu)^T \Sigma^{-1} (x - \mu)}) 
 $$
 
 其中，$\mu$为各随机变量的均值组成的$n \times 1$向量，$\Sigma$表示随机变量间的$n \times n$协方差矩阵，正定。
